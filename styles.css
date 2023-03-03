@@ -1,0 +1,40 @@
+* {
+  font-family: 'Quicksand', sans-serif;
+  /* border: solid 1px rgb(115, 0, 255); */
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+  height: max-content;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  text-align: center;
+  height: 100px;
+  width: 100px;
+}
+
+.border-mid {
+border: 2px solid purple;
+}
+
+.border-top, .border-btm {
+  border-left: 2px solid purple;
+  border-right: 2px solid purple;
+}
+
+.border-left, .border-right {
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
+}
