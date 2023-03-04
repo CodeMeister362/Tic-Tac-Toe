@@ -1,38 +1,38 @@
-var player1 = new Player ({id:'player 1', token:'ONE'}),
-    player2 = new Player ({id:'player 2', token:'TWO'});
-    
-    //keep track of data of board
-var row1 = [],
-    row2 = [],
-    row3 = [],
-    column1 = [],
-    column2 = [],
-    column3 = [];
-
-    //whose turn?
-var currentTurn = player1 || player2
-
-
-
-
-class Game{
-  constructor(player) {
-    this.turn = true;
-    this.player = player
+class Game {
+  constructor(player1, player2) {
+    this.turn = player1;
+    this.player1 = player1;
+    this.player2 = player2;
+    this.winArrays = [ 
+      [1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]
+    ];
+    this.winner = undefined;
   }
-  win() {
-    if() {
-
+  currentTurn() {
+    if(this.turn === 'Player1') {
+      this.turn = player2.id
+      this.player = player2.id
+    } else {
+      this.turn = player1.id
+      this.player = player1.id
     }
   }
-  draw() {
-    if() {
 
-    }
-  }
-  reset() {
-    if() {
+  // win() {
+  //   if() {
 
-    }
-  }
+  //   }
+  // }
+  // draw() {
+  //   if() {
+
+  //   }
+  // }
+  // reset() {
+  //   if() {
+
+  //   }
+  // }
 }
+
+
