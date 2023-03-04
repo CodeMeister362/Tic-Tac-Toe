@@ -10,6 +10,5 @@ class Player {
   }
 };
 
-var player1 = new Player ('Player 1', 'ONE');
-var player2 = new Player ('Player 2', 'TWO');   
+ 
    
