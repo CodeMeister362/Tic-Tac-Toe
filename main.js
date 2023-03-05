@@ -10,7 +10,7 @@ var boardGame = document.querySelectorAll('.all-box'),
     boardGame.forEach(function(div) {
       div.addEventListener('click', function() {
         var source = event.target 
-        console.log(source.id)
+        console.log(source)
         if(source.innerText === "" && source.classList.contains('box')) {
           updatePlayer()
           updateToken(source)
@@ -37,10 +37,10 @@ function updateToken(boxToken) {
 
 function addToArray(source) {
   if(game.turn === player1) {
-    game.player1Array.push(source.id)
+    game.winArray[0].push(source.id)
   }
   if(game.turn === player2) {
-    game.player2Array.push(source.id)
+    game.winArray[1].push(source.id)
   }
 }
 

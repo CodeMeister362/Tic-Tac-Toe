@@ -1,9 +1,7 @@
 class Game {
   constructor(player1, player2) {
     this.turn = player1;
-    this.player1Array = [];
-    this.player2Array = [];
-    this.winArrays = [[],[],[]];
+    this.winArray = [player1.positionArray, player2.positionArray]
     this.winner = undefined;
   }
   currentTurn() {
@@ -15,28 +13,11 @@ class Game {
     }
   }
 
-  // var win = '🤪,🤪,🤪' || ''
-  // win() {
-  //   for(var i = 0; i < this.winArrays.length; i++) {
-  //     if(this.winArrays[i] === '🤪') {
-  //       this.winner = player1
-  //       player.increaseWins()
-  //       console.log('PLAYER 1 WINS!! 🤪')
-  //     }
-  //   }
-  // }
-  
-
-  // draw() {
-  //   if() {
-
-  //   }
-  // }
-  // reset() {
-  //   if() {
-
-  //   }
-  // }
+  win() {
+    for(var i = 0; i < this.winArray.length; i++) {
+      
+    }
+  }
 }
 
 
