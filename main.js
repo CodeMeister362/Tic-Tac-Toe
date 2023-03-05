@@ -7,23 +7,28 @@ var boardGame = document.querySelectorAll('.all-box'),
     currentPlayer = document.querySelector('.js-whose-turn');
 
 // Event Listener
-    boardGame.forEach(function(item) {
-      item.addEventListener('click', function(event) {
+    boardGame.forEach(function(div) {
+      div.addEventListener('click', function(event) {
         var source = event.target || event.srcElement;
-        console.log(source)
-        updatePlayer()
-        updateToken(source)
+        if(source.innerText === "" && source.classList.contains('box')) {
+          updatePlayer()
+          updateToken(source)
+        }
       })
     })
 
+
 // Event handlers
 function updatePlayer() {
-  console.log(game.currentTurn())
+  game.currentTurn()
   currentPlayer.innerHTML = `It's ${game.turn.id} turn!`;
 }
 
 function updateToken(boxToken) {
-  console.log(game.turn.token)
+  game.turn.token
   boxToken.innerHTML = `${game.turn.token}`
 }
+
+
+
  
