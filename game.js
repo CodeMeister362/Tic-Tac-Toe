@@ -9,19 +9,16 @@ class Game {
     this.winner = undefined;
   }
   currentTurn() {
-    if(this.turn === 'Player1') {
-      this.turn = player2.id
-      this.player = player2.id
-    } else {
-      this.turn = player1.id
-      this.player = player1.id
+    if(this.turn === player1) {
+      return this.turn = player2
+    } 
+    if(this.turn === player2) {
+      return this.turn = player1
     }
   }
 
   // win() {
-  //   if() {
-
-  //   }
+  // }
   // }
   // draw() {
   //   if() {
