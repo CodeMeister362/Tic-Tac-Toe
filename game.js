@@ -18,10 +18,33 @@ class Game {
 
   winCondition() {
     for(var i = 0; i < this.winArray[0].length; i++) {
-      if(this.winArray[0].includes('1' && '2' && '3')) {
-        this.winner = player1
-        // player.increaseWins(this.winner)
+      if(this.winArray[0].includes('1' && '2' && '3') || 
+      this.winArray[0].includes('4' && '5' && '6') || 
+      this.winArray[0].includes('7' && '8' && '9') || 
+      this.winArray[0].includes('1' && '4' && '7') || 
+      this.winArray[0].includes('2' && '5' && '8') || 
+      this.winArray[0].includes('3' && '6' && '9') || 
+      this.winArray[0].includes('1' && '5' && '9') ||
+      this.winArray[0].includes('3' && '5' && '7')) {
+        return this.winner = player1
       }
+    }
+    for(var i = 0; i < this.winArray[1].length; i++) {
+      if(this.winArray[1].includes('1' && '2' && '3') || 
+      this.winArray[1].includes('4' && '5' && '6') || 
+      this.winArray[1].includes('7' && '8' && '9') || 
+      this.winArray[1].includes('1' && '4' && '7') || 
+      this.winArray[1].includes('2' && '5' && '8') || 
+      this.winArray[1].includes('3' && '6' && '9') || 
+      this.winArray[1].includes('1' && '5' && '9') ||
+      this.winArray[1].includes('3' && '5' && '7')) {
+        return this.winner = player2
+      }
+    }
+    if(this.winner === player1) {
+     return player1.wins++
+    } else if(this.winner === player2) {
+     return player2.wins++
     }
   }
 }

@@ -3,22 +3,29 @@ var player1 = new Player ('Player1', '🥷'),
     game = new Game (player1, player2); 
 
 // QuerySelectors
-var boardGame = document.querySelectorAll('.all-box'),
+var boardGame = document.querySelectorAll('.box'),
+    endGame = document.querySelector('.all-box'),
+    player1Score = document.querySelector('.player-1'),
+    player2Score = document.querySelector('.player-2'),
     currentPlayer = document.querySelector('.js-whose-turn');
 
 // Event Listener
-    boardGame.forEach(function(div) {
-      div.addEventListener('click', function() {
-        var source = event.target 
-        if(source.innerText === "" && source.classList.contains('box')) {
-          updatePlayer()
-          updateToken(source)
-          addToArray(source)
-          game.winCondition()
-          gameWin() 
-        }
-      })
+    
+boardGame.forEach(function(div) {
+  div.addEventListener('click', function() {
+    var source = event.target 
+      if(endGame.classList.contains('game-over')) {
+        return;
+      } else if(source.innerText === "" && source.classList.contains('box')) {
+        updatePlayer()
+        updateToken(source)
+        addToArray(source)
+        game.winCondition()
+        gameWin() 
+        playerScore()
+      }
     })
+  })
 
 
 // Event handlers
@@ -27,9 +34,9 @@ function updatePlayer() {
   currentPlayer.innerHTML = `It's ${game.turn.token} turn!`;
 }
 
-function updateToken(boxToken) {
+function updateToken(source) {
   game.turn.token
-  boxToken.innerHTML = `${game.nextTurn.token}`
+  source.innerHTML = `${game.nextTurn.token}`
 }
 
 function addToArray(source) {
@@ -43,11 +50,19 @@ function addToArray(source) {
 
 function gameWin() {
   if(game.winner === player1 || game.winner === player2) {
-    boardGame.removeEventListener('click', )
+    endGame.classList.add('game-over')
     return currentPlayer.innerHTML = `Player ${game.winner.token} WINS!!!`
   }
-}
+  setTimeout(function() {
+    // console.log('time to destruction')
+    // boardGame.innerHTML = boardGame.innerHTML.replace(new RegExp("🥷", "g"), "")
+  }, 4000)
+} 
 
+function playerScore() {
+  player1Score.innerHTML = `player 1 - ${player1.wins} wins`
+  player2Score.innerHTML = `player 2 - ${player2.wins} wins`
+}
 
 
  
