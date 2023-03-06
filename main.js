@@ -10,11 +10,14 @@ var boardGame = document.querySelectorAll('.all-box'),
     boardGame.forEach(function(div) {
       div.addEventListener('click', function() {
         var source = event.target 
+        if(game.winner === player1 || game.winner === player2) {
+          return currentPlayer.innerHTML = `Player ${game.winner.token} WINS!!!`
+        }
         if(source.innerText === "" && source.classList.contains('box')) {
           updatePlayer()
           updateToken(source)
           addToArray(source)
-          game.win()
+          game.winCondition()
         }
       })
     })
@@ -39,6 +42,13 @@ function addToArray(source) {
     game.winArray[0].push(source.id)
   }
 }
+
+// function gameWin(event) {
+//   if(game.winner === player1 || game.winner === player2) {
+//     event.stopPropagation()
+//     return currentPlayer.innerHTML = `Player ${game.winner.token} WINS!!!`
+//   }
+// }
 
 
 

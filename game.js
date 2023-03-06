@@ -1,3 +1,5 @@
+var player = new Player
+
 class Game {
   constructor(player1, player2) {
     this.turn = player1;
@@ -16,14 +18,14 @@ class Game {
   }
 
 
-  win() {
+  winCondition() {
     for(var i = 0; i < this.winArray[0].length; i++) {
-      if(this.winArray[0] === ['1','2','3']) {
+      if(this.winArray[0].includes('1' && '2' && '3')) {
         this.winner = player1
+        player.increaseWins(this.winner)
       }
     }
   }
-
 }
 
 
