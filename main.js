@@ -1,6 +1,6 @@
-var player1 = new Player ('Player1', '\u{1F977}');
-var player2 = new Player ('Player2', '\u{1F92A}');  
-var game = new Game (player1, player2); 
+var player1 = new Player ('Player1', '🥷'),
+    player2 = new Player ('Player2', '\u{1F92A}'),  
+    game = new Game (player1, player2); 
 
 // QuerySelectors
 var boardGame = document.querySelectorAll('.all-box'),
@@ -10,18 +10,14 @@ var boardGame = document.querySelectorAll('.all-box'),
     boardGame.forEach(function(div) {
       div.addEventListener('click', function() {
         var source = event.target 
-        console.log(source)
         if(source.innerText === "" && source.classList.contains('box')) {
           updatePlayer()
           updateToken(source)
           addToArray(source)
+          game.win()
         }
       })
     })
-//each player has an array
-//if its their turn push id into array
-//run through arrays
-//check for win's
 
 
 // Event handlers
@@ -32,15 +28,15 @@ function updatePlayer() {
 
 function updateToken(boxToken) {
   game.turn.token
-  boxToken.innerHTML = `${game.turn.token}`
+  boxToken.innerHTML = `${game.nextTurn.token}`
 }
 
 function addToArray(source) {
   if(game.turn === player1) {
-    game.winArray[0].push(source.id)
+    game.winArray[1].push(source.id)
   }
   if(game.turn === player2) {
-    game.winArray[1].push(source.id)
+    game.winArray[0].push(source.id)
   }
 }
 

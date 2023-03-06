@@ -1,23 +1,29 @@
 class Game {
   constructor(player1, player2) {
     this.turn = player1;
+    this.nextTurn = null
     this.winArray = [player1.positionArray, player2.positionArray]
-    this.winner = undefined;
+    this.winner = null;
   }
   currentTurn() {
     if(this.turn === player1) {
-      return this.turn = player2
-    } 
-    if(this.turn === player2) {
-      return this.turn = player1
+       this.turn = player2
+       this.nextTurn = player1
+    } else if(this.turn === player2) {
+       this.turn = player1
+       this.nextTurn = player2
     }
   }
 
+
   win() {
-    for(var i = 0; i < this.winArray.length; i++) {
-      
+    for(var i = 0; i < this.winArray[0].length; i++) {
+      if(this.winArray[0] === ['1','2','3']) {
+        this.winner = player1
+      }
     }
   }
+
 }
 
 
