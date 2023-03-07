@@ -42,9 +42,11 @@ function updateToken(source) {
 function addToArray(source) {
   if(game.turn === player1) {
     game.winArray[1].push(source.id)
+    console.log(source.id)
   }
   if(game.turn === player2) {
     game.winArray[0].push(source.id)
+    console.log(source.id)
   }
 }
 
@@ -53,10 +55,10 @@ function gameWin() {
     endGame.classList.add('game-over')
     return currentPlayer.innerHTML = `Player ${game.winner.token} WINS!!!`
   }
-  setTimeout(function() {
-    // console.log('time to destruction')
-    // boardGame.innerHTML = boardGame.innerHTML.replace(new RegExp("🥷", "g"), "")
-  }, 4000)
+  // setTimeout(function() {
+  //   console.log('time to destruction')
+  //   boardGame.innerHTML = ""
+  // }, 4000)
 } 
 
 function playerScore() {
