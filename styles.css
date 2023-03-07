@@ -33,6 +33,7 @@ main {
   width: 100px;
   font-size: 60px;
   pointer-events: auto;
+  cursor: pointer;
 }
 
 .border-mid {

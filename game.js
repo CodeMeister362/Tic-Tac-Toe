@@ -5,6 +5,7 @@ class Game {
     this.winArray = [player1.positionArray, player2.positionArray]
     this.winner = undefined;
   }
+  
   currentTurn() {
     if(this.turn === player1) {
        this.turn = player2
@@ -24,7 +25,6 @@ class Game {
         this.winner = 'draw'
     }
   }
-
 
   winCondition() {
     for(var i = 0; i < this.winArray[0].length; i++) {
