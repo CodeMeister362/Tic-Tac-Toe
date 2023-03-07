@@ -7,11 +7,20 @@ header {
   justify-content: space-evenly;
 }
 
+body {
+  background-color: rgba(0, 0, 0, 0.935);
+  background-image: url(tic-tac-toe-background.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 150px;
   height: max-content;
   width: 350px;
   margin-left: auto;
@@ -27,15 +36,15 @@ main {
 }
 
 .border-mid {
-border: 2px solid purple;
+border: 4px solid purple;
 }
 
 .border-top, .border-btm {
-  border-left: 2px solid purple;
-  border-right: 2px solid purple;
+  border-left: 4px solid purple;
+  border-right: 4px solid purple;
 }
 
 .border-left, .border-right {
-  border-top: 2px solid purple;
-  border-bottom: 2px solid purple;
+  border-top: 4px solid purple;
+  border-bottom: 4px solid purple;
 }

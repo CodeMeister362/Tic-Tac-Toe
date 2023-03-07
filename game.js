@@ -9,9 +9,19 @@ class Game {
     if(this.turn === player1) {
        this.turn = player2
        this.nextTurn = player1
-    } else if(this.turn === player2) {
+    } else { 
        this.turn = player1
        this.nextTurn = player2
+    }
+  }
+
+  drawCondition() {
+      if(this.winArray[0].length + this.winArray[1].length === 9) {
+        this.winArray[0] = []
+        this.winArray[1] = []
+        player1.positionArray = []
+        player2.positionArray = []
+        this.winner = 'draw'
     }
   }
 
