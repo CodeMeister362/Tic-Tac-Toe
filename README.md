@@ -26,7 +26,7 @@ I built this project over 6 days during my 6th week at Turing School of Software
 
 ## Contributors:
 
-Nathan Chamberlain ![LinkedIn](https://www.linkedin.com/in/chamberlainux/)
+Nathan Chamberlain [LinkedIn](https://www.linkedin.com/in/chamberlainux/)
 
 ## Learning Goals:
 
