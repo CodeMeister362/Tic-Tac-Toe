@@ -6,7 +6,7 @@ Who doesn't like a fun distraction?! This tic tac toe game is the perfect way to
 
 ## Installation Instructions:
 
-[To play the game follow this link COMING SOON]()
+[To play the game follow this link](https://codemeister362.github.io/Tic-Tac-Toe/)
 
 If you would like to build onto the code and evolve the game then...
 	-Open the repository in Github.
